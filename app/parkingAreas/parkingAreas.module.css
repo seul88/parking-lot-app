@@ -1,0 +1,5 @@
+.parkingAreaWrapper {
+    display: flex;
+    padding-block: 10px;
+    gap: 8px;
+}

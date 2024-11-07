@@ -1,7 +1,9 @@
+import { ParkingAreasContainer } from "./ParkingAreasContainer";
+
 export default function ParkingAreasPage() {
     return (
-        <div>
-            Parking areas page
-        </div>
+        <>
+            <ParkingAreasContainer />
+        </>
     );
 };
