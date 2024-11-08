@@ -26,6 +26,14 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-width: 360px;
+}
+
+.areasContainerHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .pricingWrapper{

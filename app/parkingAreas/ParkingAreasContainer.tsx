@@ -10,7 +10,10 @@ export const ParkingAreasContainer:FC = async () => {
 
     return (
         <div className={styles.areasContainer}>
-            {data.map(item => (<ParkingArea key={item.id} {...item} />))}
+            {data.length === 0 ?
+                'No items found.' :
+                data.map(item => (<ParkingArea key={item.id} {...item} />))
+            }
         </div>
     );
 };

@@ -5,3 +5,5 @@ export type ParkingAreaType = {
     weekendHourlyRate: number;
     discountPercentage: number;
 }
+
+export type ParingAreaInputType = Omit<ParkingAreaType, 'id'>;

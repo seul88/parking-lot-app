@@ -7,10 +7,9 @@
   --button-secondary-hover: #f2f2f2;
 
   display: grid;
-  grid-template-rows: 20px 1fr 20px;
   justify-items: center;
   min-height: 100svh;
-  gap: 64px;
+  gap: 16px;
   font-family: var(--font-geist-sans);
 }
 
@@ -29,7 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  grid-row-start: 2;
+  margin-top: 16px;
 }
 
 .main ol {
