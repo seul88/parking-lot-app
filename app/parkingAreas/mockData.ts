@@ -52,7 +52,7 @@ export const mockParkings: ParkingAreaType[] = [
     },
     {
         id: '8',
-        name: 'Islandska',
+        name: 'Islandzka',
         weekdaysHourlyRate: 14,
         weekendHourlyRate: 15,
         discountPercentage: 1

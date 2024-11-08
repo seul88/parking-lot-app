@@ -1,5 +1,66 @@
 .parkingAreaWrapper {
     display: flex;
-    padding-block: 10px;
+    flex-direction: column;
+    padding: 10px;
     gap: 8px;
+
+    border: 1px solid #D3D3D3;
+    border-radius: 6px;
+}
+
+.parkingAreaHeader {
+    display: grid;
+    grid-template-columns: 200px 50px 50px;
+    gap: 10px;
+    margin-block: 4px;
+}
+
+.areaName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.areasContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pricingWrapper{
+    display: flex;
+    gap: 14px;
+    margin-block: 4px;
+}
+
+.pricingItem {
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+}
+
+.pricingValue {
+    font-weight: 400;
+    font-size: 1.75rem;
+}
+
+.pricingLabel {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.actionButton {
+    cursor: pointer;
+    background: none;
+    border: 1px solid #D3D3D3;
+    border-radius: 4px;
+}
+
+.editButton:hover {
+    background-color: dodgerblue;
+}
+
+.deleteButton:hover {
+    background-color: indianred;
 }

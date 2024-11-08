@@ -1,7 +1,9 @@
+import { PaymentForm } from "./PaymentForm";
+
 export default function PaymentPage() {
     return (
         <div>
-            Payment page
+            <PaymentForm />
         </div>
     );
 };
