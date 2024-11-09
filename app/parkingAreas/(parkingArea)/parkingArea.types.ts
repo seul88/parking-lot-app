@@ -6,4 +6,5 @@ export type ParkingAreaType = {
     discountPercentage: number;
 }
 
-export type ParingAreaInputType = Omit<ParkingAreaType, 'id'>;
+export type SaveParkingAreaInputType = Omit<ParkingAreaType, 'id'>;
+export type EditParkingAreaInputType = Partial<SaveParkingAreaInputType>;

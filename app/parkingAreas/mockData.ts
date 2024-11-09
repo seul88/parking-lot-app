@@ -1,4 +1,4 @@
-import { ParkingAreaType } from "./parkingAreas.types";
+import { ParkingAreaType } from "./(parkingArea)/parkingArea.types";
 
 export const mockParkings: ParkingAreaType[] = [
     {

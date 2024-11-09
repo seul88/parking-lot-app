@@ -1,33 +1,23 @@
 import { FC } from "react";
-import { ParkingAreaType } from "./parkingAreas.types";
+import { ParkingAreaType } from "./parkingArea.types";
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
-import { Delete } from "./delete/Delete";
-import { Edit } from "./edit/Edit";
+import { EditButton } from "../edit/EditButton";
+import { Delete } from "../delete/Delete";
 
-export const ParkingArea: FC<ParkingAreaType> = ({
+export const ParkingAreaView: FC<ParkingAreaType> = ({
     id,
     name,
     weekdaysHourlyRate,
     weekendHourlyRate,
     discountPercentage
 }) => {
-
-    // todo: should rely on url params and if edit param for given value is set to true -
-    // display form instead
-
     return (
-        <div className={styles.parkingAreaWrapper}>
+        <>
             <div className={styles.parkingAreaHeader}>
                 <div className={styles.areaName}>
                     {name}
                 </div>
-                <Edit 
-                    id={id}
-                    discountPercentage={discountPercentage}
-                    name={name}
-                    weekendHourlyRate={weekendHourlyRate}
-                    weekdaysHourlyRate={weekdaysHourlyRate}
-                />
+                <EditButton id={id} />
                 <Delete id={id} />
             </div>
             <div className={styles.pricingWrapper}>
@@ -50,6 +40,6 @@ export const ParkingArea: FC<ParkingAreaType> = ({
                     <div className={styles.pricingLabel}>Discount</div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };

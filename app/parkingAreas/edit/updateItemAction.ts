@@ -1,10 +1,11 @@
 'use server';
 
-import { SaveParkingAreaInputType } from "../(parkingArea)/parkingArea.types";
+import { ParkingAreaType } from "../(parkingArea)/parkingArea.types";
 
-export const createItemAction = async (formData: FormData) => {
+export const updateItemAction = async (formData: FormData) => {
 
-    const item: SaveParkingAreaInputType = {
+    const item: ParkingAreaType = {
+        id: formData.get('id') as string,
         name: formData.get('name') as string,
         weekdaysHourlyRate: Number(formData.get('weekdayPrice')),
         discountPercentage: Number(formData.get('discount')),

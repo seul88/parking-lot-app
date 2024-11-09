@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { mockParkingAreasQuery } from "./mockData";
-import { ParkingArea } from "./ParkingArea";
+import { ParkingArea } from "./(parkingArea)/ParkingArea";
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
 
 export const ParkingAreasContainer:FC = async () => {

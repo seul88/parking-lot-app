@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import { ParkingAreasContextProvider } from "./(context)/ParkingAreasContextProvider";
 import { AddButton } from "./create/AddButton";
 import { AddItemForm } from "./create/AddItemForm";
 import { ParkingAreasContainer } from "./ParkingAreasContainer";
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
+import { Loader } from "./Loader";
 
 export default function ParkingAreasPage() {
 
@@ -13,7 +15,9 @@ export default function ParkingAreasPage() {
                 <AddButton />
             </div>
             <AddItemForm />
-            <ParkingAreasContainer />
+            <Suspense fallback={<Loader />}>
+                <ParkingAreasContainer />
+            </Suspense>
         </ParkingAreasContextProvider>
     );
 };

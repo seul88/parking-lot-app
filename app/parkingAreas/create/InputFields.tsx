@@ -1,7 +1,8 @@
 import styles from "@/app/parkingAreas/create/create.module.css";
 import { FC } from "react";
+import { EditParkingAreaInputType } from "../(parkingArea)/parkingArea.types";
 
-export const InputFields:FC = () => {
+export const InputFields:FC<EditParkingAreaInputType> = (props) => {
     return (
         <>
             <div className={styles.addItemFormRow}>
@@ -13,6 +14,7 @@ export const InputFields:FC = () => {
                     name="name"
                     title='Name'
                     type='text'
+                    defaultValue={props.name}
                     required
                 />
             </div>
@@ -25,7 +27,7 @@ export const InputFields:FC = () => {
                     name='weekdayPrice'
                     title='Weekdays price'
                     type='number'
-                    defaultValue={0}
+                    defaultValue={props.weekdaysHourlyRate ?? 0}
                     required
                 />
             </div>
@@ -38,7 +40,7 @@ export const InputFields:FC = () => {
                     name='weekendPrice'
                     title='Weekend price'
                     type='number'
-                    defaultValue={0}
+                    defaultValue={props.weekendHourlyRate ?? 0}
                     required
                 />
             </div>
@@ -51,7 +53,7 @@ export const InputFields:FC = () => {
                     name='discount'
                     title='Discount'
                     type='number'
-                    defaultValue={0}
+                    defaultValue={props.discountPercentage ?? 0}
                     required
                 />
             </div>

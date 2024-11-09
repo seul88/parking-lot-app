@@ -1,29 +1,19 @@
-'use client'
+'use client';
 
-import { FC } from "react";
+import { FC, useContext } from "react";
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
+import { ParkingAreasContext } from "../(context)/ParkingAreasContext";
 
-type EditProps = {
+type EditButtonProps = {
     id: string;
-    name: string;
-    weekdaysHourlyRate: number;
-    weekendHourlyRate: number;
-    discountPercentage: number;
 }
 
-export const Edit: FC<EditProps> = ({
-    id,
-    discountPercentage,
-    name,
-    weekdaysHourlyRate,
-    weekendHourlyRate,
-}) => {
+export const EditButton: FC<EditButtonProps> = ({ id }) => {
+
+    const { setEditedItemId } = useContext(ParkingAreasContext);
 
     const onClick = () => {
-        // add url params: 
-        // edit=true
-        // id, name and so on
-        console.log('To edit: ' + id);
+        setEditedItemId(id);
     };
 
     return (

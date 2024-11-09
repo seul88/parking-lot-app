@@ -72,3 +72,9 @@
 .deleteButton:hover {
     background-color: indianred;
 }
+
+.editButtonsWrapper {
+    display: flex;
+    justify-content: space-around;
+    padding-block: 10px;
+}
