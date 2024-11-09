@@ -3,7 +3,18 @@
 import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Loading() {
-    return (
-      <ClipLoader />
-    );
-  }
+  return (
+      <div
+        style={{
+          display: "flex", 
+          justifyContent: "center", 
+          alignItems: "center", 
+          height: "100%",
+          border: "1px solid #D3D3D3",
+          borderRadius: "6px"
+        }}
+      >
+        <ClipLoader color={"#D3D3D3"} />
+      </div>
+  );
+}

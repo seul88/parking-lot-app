@@ -28,7 +28,7 @@ export const AddItemForm:FC = () => {
                     </div>
                     <div className={styles.addItemFormRow}>
                         <label htmlFor="weekday-price-input">
-                            Weekdays price (USD)
+                            Weekdays price (USD/h)
                         </label>
                         <input 
                             id='weekday-price-input'
@@ -41,7 +41,7 @@ export const AddItemForm:FC = () => {
                     </div>
                     <div className={styles.addItemFormRow}>
                         <label htmlFor="weekend-price-input">
-                            Weekend price (USD)
+                            Weekend price (USD/h)
                         </label>
                         <input 
                             id='weekend-price-input'
@@ -54,7 +54,7 @@ export const AddItemForm:FC = () => {
                     </div>
                     <div className={styles.addItemFormRow}>
                         <label htmlFor="discount-input">
-                            Discount [%]
+                            Discount (%)
                         </label>
                         <input 
                             id='discount-input'
