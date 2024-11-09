@@ -29,6 +29,7 @@
   flex-direction: column;
   gap: 32px;
   margin-top: 16px;
+  min-width: 360px;
 }
 
 .main ol {
