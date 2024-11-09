@@ -8,6 +8,16 @@
     background-color: dodgerblue;
 }
 
+.cancelButton {
+    width: 90px;
+    height: 40px;
+    align-self: flex-end;
+}
+
+.cancelButton:hover {
+    background-color: indianred;
+}
+
 .addItemForm {
     display: flex;
     flex-direction: column;

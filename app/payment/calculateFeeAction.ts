@@ -20,7 +20,8 @@ export const calculateFeeAction = async (formData: FormData) => {
         getDay() === 0 or getDay() === 6
         2. const baseFee = (feeInput.endTime - feeInput.startTime).ceil() * perHourFee
         3. (apply discount)
-        fee = baseFee - baseFee * discount; 
+        fee = baseFee - baseFee * discount;
+        4. (if currency is not USD - fetch exchange rate and apply it in calculations)
     */
 
     /* TODO: set params with given result */
