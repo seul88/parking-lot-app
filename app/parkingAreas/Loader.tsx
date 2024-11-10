@@ -2,7 +2,7 @@
 
 import ClipLoader from "react-spinners/ClipLoader";
 
-export const  Loader = () => {
+export const Loader = () => {
   return (
       <div
         style={{
@@ -17,4 +17,4 @@ export const  Loader = () => {
         <ClipLoader color={"#D3D3D3"} />
       </div>
   );
-}
+};

@@ -17,14 +17,12 @@ export const EditButton: FC<EditButtonProps> = ({ id }) => {
     };
 
     return (
-        <>
-            <button
-                className={`${styles.actionButton} ${styles.editButton}`} 
-                onClick={onClick}
-                title="Edit"
-            >
-                <img src="/edit.svg" alt="Delete" width={16} height={16} />
-            </button>
-        </>
+        <button
+            className={`${styles.actionButton} ${styles.editButton}`} 
+            onClick={onClick}
+            title="Edit"
+        >
+            <img src="/edit.svg" alt="Delete" width={16} height={16} />
+        </button>
     );
 };

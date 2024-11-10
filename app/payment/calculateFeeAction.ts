@@ -1,6 +1,9 @@
 'use server';
 
+import { Parking } from "../db/models";
+import { store } from "../db/store";
 import { Currencies, ParkingFeeInputValues } from "./Payment.types";
+import moment from "moment";
 
 export const calculateFeeAction = async (formData: FormData) => {
     const feeInput: ParkingFeeInputValues = {
@@ -11,18 +14,37 @@ export const calculateFeeAction = async (formData: FormData) => {
         currency: formData.get('currency') as Currencies,
     };
 
-    console.log(feeInput);
+    const data: Parking | null= await store
+        .openSession()
+        .query<Parking>({ collection: "Parkings" })
+        .whereEquals('id', feeInput.areaId)
+        .firstOrNull();
 
-    /* TODO: sql: get parking area by id */
+    if (!data) {
+        throw Error('Parking area not found!')
+    }
 
-    /* TODO: calculate 
-        1. define if weekday of weekend fee aplies
-        getDay() === 0 or getDay() === 6
-        2. const baseFee = (feeInput.endTime - feeInput.startTime).ceil() * perHourFee
-        3. (apply discount)
-        fee = baseFee - baseFee * discount;
-        4. (if currency is not USD - fetch exchange rate and apply it in calculations)
-    */
+    const { weekdaysHourlyRate, weekendHourlyRate, discountPercentage } = data;
+       
+    const startTime = moment(`${feeInput.date}T${feeInput.startTime}`);
+    const endTime = moment(`${feeInput.date}T${feeInput.endTime}`);
+    const parkingHours = Math.ceil(endTime.diff(startTime, 'hours', true));
+
+    if (parkingHours < 0) {
+        throw Error('Time travels not allowed!')
+    }
+
+    const isWeekend = new Date(feeInput.date).getDay() === 0 || 
+        new Date(feeInput.date).getDay() === 6;
+
+    const baseFee = parkingHours * (isWeekend ? weekendHourlyRate : weekdaysHourlyRate);
+    const finalFee = baseFee - (baseFee * discountPercentage / 100);
+
+    console.log(finalFee);
+
+    if (feeInput.currency !== Currencies.USD) {
+        // TODO: fetch exchange rate and convert currency
+    }
 
     /* TODO: set params with given result */
 };

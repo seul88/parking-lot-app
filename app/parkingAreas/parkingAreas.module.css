@@ -78,3 +78,16 @@
     justify-content: space-around;
     padding-block: 10px;
 }
+
+.actionButtonFormWrapper {
+    display: flex;
+    width: 50px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fillContainer {
+    height: 100%;
+    width: 100%;
+}

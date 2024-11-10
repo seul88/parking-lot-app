@@ -1,6 +1,9 @@
 'use server';
 
+import { store } from "@/app/db/store";
 import { ParkingAreaType } from "../(parkingArea)/parkingArea.types";
+import { Parking } from "@/app/db/models";
+import { revalidatePath } from "next/cache";
 
 export const updateItemAction = async (formData: FormData) => {
 
@@ -12,6 +15,18 @@ export const updateItemAction = async (formData: FormData) => {
         weekendHourlyRate: Number(formData.get('weekendPrice'))
     };
 
-    console.log(item);
-    // TODO: save to DB
+    const session = store.openSession();
+
+    const newParkingArea = new Parking(
+        item.id,
+        item.name,
+        item.weekdaysHourlyRate,
+        item.weekendHourlyRate,
+        item.discountPercentage
+    );
+
+    await session.store<Parking>(newParkingArea);
+    await session.saveChanges();
+
+    revalidatePath('/');
 };

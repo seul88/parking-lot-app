@@ -1,4 +1,4 @@
-import { PaymentForm } from "./PaymentForm";
+import { PaymentForm } from "./(forms)/PaymentForm";
 
 export default function PaymentPage() {
     return (

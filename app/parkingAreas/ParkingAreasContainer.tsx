@@ -1,18 +1,29 @@
 import { FC } from "react";
-import { mockParkingAreasQuery } from "./mockData";
 import { ParkingArea } from "./(parkingArea)/ParkingArea";
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
+import { store } from "../db/store";
+import { Parking } from "../db/models";
 
 export const ParkingAreasContainer:FC = async () => {
-    
-    /* mocked db fetch */
-    const data = await mockParkingAreasQuery();
+    const data: Parking[] = await store
+        .openSession()
+        .query<Parking>({ collection: "Parkings" })
+        .orderBy("id")
+        .all();
+        
+    const parkingData= data.map(parking => ({
+        id: String(parking.id),
+        name: parking.name,
+        weekdaysHourlyRate: parking.weekdaysHourlyRate,
+        weekendHourlyRate: parking.weekendHourlyRate,
+        discountPercentage: parking.discountPercentage
+    }));
 
     return (
         <div className={styles.areasContainer}>
-            {data.length === 0 ?
+            {parkingData.length === 0 ?
                 'No items found.' :
-                data.map(item => (<ParkingArea key={item.id} {...item} />))
+                parkingData.map(item => (<ParkingArea key={item.id} {...item} />))
             }
         </div>
     );
