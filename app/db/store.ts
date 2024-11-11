@@ -7,7 +7,7 @@ const database = process.env.RAVENDB_DATABASE as string;
 const path = process.env.RAVENDB_CERT_PATH as string;
 
 const authOptions: IAuthOptions = {
-    certificate: readFileSync(path),
+    certificate: path ? readFileSync(path) : String(process.env.CERT),
     type: 'pem',
 };
 
