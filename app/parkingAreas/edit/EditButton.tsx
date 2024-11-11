@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, useContext } from "react";
+import Image from 'next/image';
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
 import { ParkingAreasContext } from "../(context)/ParkingAreasContext";
 
@@ -22,7 +23,7 @@ export const EditButton: FC<EditButtonProps> = ({ id }) => {
             onClick={onClick}
             title="Edit"
         >
-            <img src="/edit.svg" alt="Delete" width={16} height={16} />
+            <Image src="/edit.svg" alt="Delete" width={16} height={16} />
         </button>
     );
 };

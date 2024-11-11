@@ -34,7 +34,7 @@ export const calculateFeeAction = async (formData: FormData) => {
         throw Error('Parking area not found!')
     }
 
-    const { weekdaysHourlyRate, weekendHourlyRate, discountPercentage, name: parkingName } = data;
+    const { weekdaysHourlyRate, weekendHourlyRate, discountPercentage } = data;
        
     const startTime = moment(`${feeInput.date}T${feeInput.startTime}`);
     const endTime = moment(`${feeInput.date}T${feeInput.endTime}`);

@@ -1,6 +1,7 @@
 'use client';
 
 import { FC } from "react";
+import Image from 'next/image';
 import styles from "@/app/parkingAreas/parkingAreas.module.css";
 import { deleteItemAction } from "./deleteItemAction";
 
@@ -22,7 +23,7 @@ export const Delete: FC<DeleteProps> = ({ id }) => {
                 type="submit"
                 title="Delete"
             >
-                <img src="/delete.svg" alt="Delete" width={16} height={16} />
+                <Image src="/delete.svg" alt="Delete" width={16} height={16} />
             </button>
         </form>
     );

@@ -7,13 +7,6 @@ import { CustomBarLoader } from "../CustomBarLoader";
 import { DateInputs } from "./DateInputs";
 
 export const PaymentForm: FC = () => {
-
-    const onSubmit = async (formData: FormData) => {
-        const result = await calculateFeeAction(formData);
-        console.log(result)
-
-    };
-
     return (
         <form className={styles.formWrapper} action={calculateFeeAction}>
             <div className={styles.addItemFormRow}>

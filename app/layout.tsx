@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import styles from "./page.module.css";
 import { Navigation } from "./navigation/Navigation";
+import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,9 @@ export default function RootLayout({
         <div className={styles.page}>
           <main className={styles.main}>
             <Navigation />
-            {children}
+            <Suspense fallback={<div>Loading...</div>}>
+              {children}
+            </Suspense>
           </main>
         </div>
       </body>
