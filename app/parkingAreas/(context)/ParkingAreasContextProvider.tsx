@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState } from "react";
+import { useState } from "react";
 import { ParkingAreasContext } from "./ParkingAreasContext";
 
 export const ParkingAreasContextProvider = ({

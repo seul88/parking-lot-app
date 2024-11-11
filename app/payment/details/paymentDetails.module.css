@@ -1,0 +1,10 @@
+.paymentDetailsContainer{
+    width: 360px;
+    padding: 20px;
+}
+
+.priceContainer {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 4px 0;
+}

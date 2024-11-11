@@ -1,13 +1,13 @@
 import { DocumentStore, IAuthOptions } from "ravendb";
 import { Parking } from "@/app/db/models";
-import fs from 'fs';
+import { readFileSync } from 'fs';
 
 const url = process.env.RAVENDB_URL as string;
 const database = process.env.RAVENDB_DATABASE as string;
 const path = process.env.RAVENDB_CERT_PATH as string;
 
 const authOptions: IAuthOptions = {
-    certificate: fs.readFileSync(path),
+    certificate: readFileSync(path),
     type: 'pem',
 };
 

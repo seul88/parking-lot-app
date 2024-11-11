@@ -27,6 +27,8 @@ export const InputFields:FC<EditParkingAreaInputType> = (props) => {
                     name='weekdayPrice'
                     title='Weekdays price'
                     type='number'
+                    step="0.01"
+                    min={0.01}
                     defaultValue={props.weekdaysHourlyRate ?? 0}
                     required
                 />
@@ -40,6 +42,8 @@ export const InputFields:FC<EditParkingAreaInputType> = (props) => {
                     name='weekendPrice'
                     title='Weekend price'
                     type='number'
+                    step="0.01"
+                    min={0.01}
                     defaultValue={props.weekendHourlyRate ?? 0}
                     required
                 />
