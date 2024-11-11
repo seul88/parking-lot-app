@@ -65,6 +65,10 @@
     border-radius: 4px;
 }
 
+.editButton {
+    height: 40px;
+}
+
 .editButton:hover {
     background-color: dodgerblue;
 }

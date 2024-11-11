@@ -57,6 +57,8 @@ export const InputFields:FC<EditParkingAreaInputType> = (props) => {
                     name='discount'
                     title='Discount'
                     type='number'
+                    min={0}
+                    max={100}
                     defaultValue={props.discountPercentage ?? 0}
                     required
                 />
